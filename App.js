@@ -163,40 +163,15 @@ function App() {
     setData(searchData);
   };
   const searchResultOnPress = (item) => {
-    console.log(item, 'zaaaaa');
-  };
-  const icon = <Text>icon</Text>;
-  const customSearchResultItem = ({item, id}) => {
     console.log(item);
-    return (
-      <View>
-        <Text>{item.title}</Text>
-      </View>
-    );
-  };
-  const customCss = {
-    body: {
-      backgroundColor: '#202024',
-    },
-    search: {
-      backgroundColor: '#141416',
-    },
-    searchInput: {
-      color: 'red',
-    },
   };
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#c7d0cc'}}>
-      <Text>deneme</Text>
       <BottomSearchBar
-        //customSearchResultItem={customSearchResultItem}
-        //customCss={customCss}
-        icon={icon}
         searchResultOnPress={searchResultOnPress}
         onSearchTextChange={searchTextChange}
-        data={data}>
-        <Text>deneme</Text>
-      </BottomSearchBar>
+        data={data}
+      />
     </SafeAreaView>
   );
 }
