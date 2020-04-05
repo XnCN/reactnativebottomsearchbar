@@ -1,0 +1,16 @@
+/__tests__/
+/android
+/assets
+/ios
+.buckconfig
+.eslintrc.js
+.flowconfig
+.prettierrc.js
+.svgorc.json
+.watchmanconfig
+app.json
+babel.config.js
+/index.js
+metro.config.js
+package-lock.json
+.gitattributes
