@@ -14,8 +14,10 @@ function BodyChildrenAnimation({children}) {
   const {state, dispatch} = useContext(Store);
   const {isOpen, customCss} = state;
   const [animatedOpacity] = useState(new Animated.Value(1));
+  const [height, setHeight] = useState();
   useEffect(() => {
     if (!isOpen) {
+      setHeight({});
       Animated.timing(animatedOpacity, {
         toValue: 1,
         duration: 400,
@@ -27,12 +29,17 @@ function BodyChildrenAnimation({children}) {
         toValue: 0,
         duration: 1,
         useNativeDriver: false,
-      }).start();
+      }).start(() => setHeight({height: 0}));
     }
   }, [isOpen]);
   return (
     <Animated.View
-      style={[{opacity: animatedOpacity}, styles.children, customCss.children]}>
+      style={[
+        {opacity: animatedOpacity},
+        height,
+        styles.children,
+        customCss.children,
+      ]}>
       {children}
     </Animated.View>
   );

@@ -7,6 +7,18 @@
   "homepage": "https://github.com/XnCN/reactnativebottomsearchbar",
   "license": "MIT",
   "private": false,
+  "keywords": [
+    "react-native",
+    "search",
+    "bottom",
+    "bar",
+    "bottom search bar",
+    "simple search",
+    "search component",
+    "react-native search",
+    "react-native search component",
+    "bottom search component"
+  ],
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",

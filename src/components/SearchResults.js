@@ -4,18 +4,18 @@ import SearchResultItem from './SearchResultItem';
 import {Store} from '../store';
 
 function SearchResults() {
-  const {state} = useContext(Store);
+  const {state, dispatch} = useContext(Store);
   const {data, customSearchResultItem, customCss} = state;
   return (
     <FlatList
       style={customCss.searchResults}
       data={data}
-      keyExtractor={(item) => item.id}
+      keyExtractor={item => item.id}
       renderItem={({item, index}) =>
         customSearchResultItem == undefined ? (
           <SearchResultItem item={item} index={index} />
         ) : (
-          customSearchResultItem({item, index})
+          customSearchResultItem({item, index, dispatch})
         )
       }
     />

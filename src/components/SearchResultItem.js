@@ -8,12 +8,15 @@ function SearchResultItem({item, index}) {
   const {customCss} = state;
   return (
     <TouchableWithoutFeedback
-      onPress={() =>
+      onPress={() => {
         dispatch({
           type: 'searchResultPressedItem',
           searchResultPressedItem: {item, index},
-        })
-      }>
+        });
+        dispatch({
+          type: 'close',
+        });
+      }}>
       <View style={[styles.item, calculatedStyle, customCss.item]}>
         <Text>{item.title}</Text>
       </View>

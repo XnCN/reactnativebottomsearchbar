@@ -16,7 +16,25 @@ npm install bottomsearchbar
 Simple Use
 
 ```javascript
-<BottomSearchBar />
+import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+import BottomSearch from 'bottomsearchbar';
+const App = () => {
+  return (
+    <View style={styles.container}>
+      <BottomSearch />
+    </View>
+  );
+};
+
+export default App;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'grey',
+  },
+});
 ```
 
 ### Component Props And Sample Prop Datas
@@ -49,13 +67,13 @@ const customCss = {
 #### searchResultOnPress Function Sample
 
 ```javascript
-<BottomSearchBar searchResultOnPress={(item) => console.log(item)} />
+<BottomSearchBar searchResultOnPress={item => console.log(item)} />
 ```
 
 #### onSearchTextChange Event Sample
 
 ```javascript
-<BottomSearchBar onSearchTextChange={(text) => console.log(text)} />
+<BottomSearchBar onSearchTextChange={text => console.log(text)} />
 ```
 
 #### Search Data Object Sample

@@ -1,4 +1,4 @@
-import React, {useContext, useRef, useEffect, useState} from 'react';
+import React, {useContext, useRef, useEffect, useState, memo} from 'react';
 import {
   StyleSheet,
   Text,
@@ -13,7 +13,7 @@ function Search() {
   const {state, dispatch} = useContext(Store);
   const {isOpen, icon, placeHolderText, cancelText, customCss} = state;
   const searchInputRef = useRef();
-
+  console.log('search render');
   return (
     <View style={styles.container}>
       <View style={[styles.search, customCss.search]}>
@@ -23,7 +23,7 @@ function Search() {
           style={[styles.searchInput, customCss.searchInput]}
           placeholder={placeHolderText ? placeHolderText : 'Search'}
           ref={searchInputRef}
-          onChangeText={(searchText) =>
+          onChangeText={searchText =>
             dispatch({type: 'searchText', searchText})
           }
         />

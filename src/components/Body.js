@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState, memo} from 'react';
 import {
   View,
   StyleSheet,
@@ -27,7 +27,7 @@ function Body({
 }) {
   const {state, dispatch} = useContext(Store);
   const {isOpen, searchText, searchResultPressedItem} = state;
-
+  console.log('bodyrender');
   //Props
   useEffect(() => {
     if (placeHolderText != undefined)

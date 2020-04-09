@@ -156,13 +156,13 @@ const initialData = [
 ];
 function App() {
   const [data, setData] = useState(initialData);
-  const searchTextChange = (text) => {
-    const searchData = Array.from(initialData).filter((i) =>
+  const searchTextChange = text => {
+    const searchData = Array.from(initialData).filter(i =>
       i.title.toLocaleLowerCase('tr').includes(text.toLocaleLowerCase('tr')),
     );
     setData(searchData);
   };
-  const searchResultOnPress = (item) => {
+  const searchResultOnPress = item => {
     console.log(item);
   };
   return (
