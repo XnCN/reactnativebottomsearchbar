@@ -1,17 +1,10 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {
-  View,
-  StyleSheet,
-  Dimensions,
-  Animated,
-  Button,
-  Easing,
-} from 'react-native';
+import {StyleSheet, Animated, Easing} from 'react-native';
 
 import {Store} from '../store';
 
 function BodyChildrenAnimation({children}) {
-  const {state, dispatch} = useContext(Store);
+  const {state} = useContext(Store);
   const {isOpen, customCss} = state;
   const [animatedOpacity] = useState(new Animated.Value(1));
   const [height, setHeight] = useState();

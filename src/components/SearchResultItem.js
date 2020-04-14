@@ -5,7 +5,7 @@ import {Store} from '../store';
 function SearchResultItem({item, index}) {
   const calculatedStyle = index % 2 == 0 ? styles.striped : {};
   const {state, dispatch} = useContext(Store);
-  const {customCss} = state;
+  const {customCss, customSearchResultItem} = state;
   return (
     <TouchableWithoutFeedback
       onPress={() => {
@@ -17,9 +17,13 @@ function SearchResultItem({item, index}) {
           type: 'close',
         });
       }}>
-      <View style={[styles.item, calculatedStyle, customCss.item]}>
-        <Text>{item.title}</Text>
-      </View>
+      {customSearchResultItem == undefined ? (
+        <View style={[styles.item, calculatedStyle, customCss.item]}>
+          <Text>{item.title}</Text>
+        </View>
+      ) : (
+        customSearchResultItem({item, index, dispatch})
+      )}
     </TouchableWithoutFeedback>
   );
 }

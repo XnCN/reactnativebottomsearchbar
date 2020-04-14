@@ -1,13 +1,5 @@
-import React, {useContext, useEffect, useState, memo} from 'react';
-import {
-  View,
-  StyleSheet,
-  Dimensions,
-  Animated,
-  Button,
-  Easing,
-  Text,
-} from 'react-native';
+import React, {useContext, useEffect} from 'react';
+import {StyleSheet} from 'react-native';
 import Search from './Search';
 import {Store} from '../store';
 import BodyAnimation from '../animations/BodyAnimation';

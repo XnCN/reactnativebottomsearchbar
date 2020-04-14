@@ -1,12 +1,5 @@
-import React, {useContext, useRef, useEffect, useState, memo} from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Button,
-  Animated,
-} from 'react-native';
+import React, {useContext, useRef} from 'react';
+import {StyleSheet, View, TextInput, Button} from 'react-native';
 import {Store} from '../store';
 
 function Search() {

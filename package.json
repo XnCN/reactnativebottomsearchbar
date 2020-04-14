@@ -1,6 +1,6 @@
 {
   "name": "bottomsearchbar",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "main": "./src/index.js",
   "author": "Aydemir Eray Han",
   "description": "React native bottom search bar component",

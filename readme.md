@@ -16,13 +16,34 @@ npm install bottomsearchbar
 Simple Use
 
 ```javascript
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import BottomSearch from 'bottomsearchbar';
+const initialData = [
+  {
+    userId: 1,
+    id: 1,
+    title: 'delectus aut autem',
+    completed: false,
+  },
+  {
+    userId: 1,
+    id: 2,
+    title: 'quis ut nam facilis et officia qui',
+    completed: false,
+  },
+  {
+    userId: 1,
+    id: 3,
+    title: 'fugiat veniam minus',
+    completed: false,
+  },
+];
 const App = () => {
+  const [data, setData] = useState(initialData);
   return (
     <View style={styles.container}>
-      <BottomSearch />
+      <BottomSearch data={data} />
     </View>
   );
 };

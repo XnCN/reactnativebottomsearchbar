@@ -4,12 +4,12 @@ import {Store} from '../store';
 
 const opennedHeight = Dimensions.get('window').height - 200;
 const BodyAnimation = ({children, styles}) => {
-  const {state, dispatch} = useContext(Store);
+  const {state} = useContext(Store);
   const {isOpen, customCss} = state;
   //StartAnimation
   const [defaultHeight, setDefaultHeight] = useState();
   const [animatedHeightValue, setAnimatedHeightValue] = useState();
-  const onLayoutHandler = (event) => {
+  const onLayoutHandler = event => {
     if (animatedHeightValue == undefined) {
       const initialHeight = event.nativeEvent.layout.height;
       setDefaultHeight(initialHeight);
